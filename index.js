@@ -1,1 +1,1 @@
-console.log("Testing Purposes");
+console.log("Testing Purpose");
