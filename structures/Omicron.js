@@ -17,14 +17,14 @@ class Omicron extends Client {
     start() {
         // Login to Discord Client
         this.login(Config.Token);
-        // Load Clients Base
+        //
         this.loadCommands(Config.Directories.Commands);
         this.loadEvents(Config.Directories.Events);
         //this.loadDashboard();
         //this.loadDatabase();
     }
     loadCommands(dir) {
-        // Load Guild Commands
+        // Load Global Commands
         let modules = fs.readdirSync(dir);
         for(let module of modules) {
             let files = fs.readdirSync(`${dir}/${module}`);
@@ -32,7 +32,7 @@ class Omicron extends Client {
                 let command = require(`${dir}/${module}/${file}`);
                 if(!command.name || !command.description || !command.usage) return;
                 try {
-                    this.commands.set(command.name, command)
+                    this.commands.set(command.name, command);
                 } catch(err) { this.error(err); }
             }
         }
