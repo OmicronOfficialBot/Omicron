@@ -15,5 +15,11 @@ class Logger {
     warn(txt) {
         console.log(color.yellow("⚠️ [Warning]\n" + txt));
     }
+    log(txt) {
+        console.log(color.bgBlue(txt));
+    }
 }
+
+// Export Logger Class
+module.exports = Logger;
                     
