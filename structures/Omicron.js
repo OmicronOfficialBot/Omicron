@@ -15,13 +15,30 @@ class Omicron extends Client {
         this.slashCommands = new Collection();
         this.cooldowns     = new Collection();
         this.modules       = new Collection();
+        this.logger        = new Logger(this);
+        this.config        = Config;
+    }
+    log(log) {
+        this.logger.log(log);
+    }
+    error(log) {
+        this.logger.error(log);
+    }
+    info(log) {
+        this.logger.info(log);
+    }
+    warn(log) {
+        this.logger.warn(log);
+    }
+    debug(log) {
+        this.logger.debug(log);
     }
     start() {
         // Login to Discord Client
         this.login(Config.Token);
         //
-        this.loadCommands(Config.Directories.Commands);
-        this.loadEvents(Config.Directories.Events);
+        this.loadCommands(this.config.Directories.Commands);
+        this.loadEvents(this.config.Directories.Events);
         //this.loadDashboard();
         //this.loadDatabase();
     }
