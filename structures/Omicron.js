@@ -49,11 +49,21 @@ class Omicron extends Client {
             let files = fs.readdirSync(`${dir}/${module}`);
             for(let file of files) {
                 let command = require(`${dir}/${module}/${file}`);
+                return this.debug(command);
                 if(!command.name || !command.description || !command.usage) return;
                 try {
                     this.commands.set(command.name, command);
                 } catch(err) { this.error(err); }
             }
+        }
+    }
+    loadEvents(dir) {
+        let files = fs.readdirSync(dir);
+        for(let file of files) {
+            let event = require(`${dir}/${file}`);
+            return this.debug(event);
+            if(!event.event) return this.error(`[EventLoader] No event name specified in ${file}!`);
+            this.on(event.event, (...args) => event.run(...args));
         }
     }
 }
