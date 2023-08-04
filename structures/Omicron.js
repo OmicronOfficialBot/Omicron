@@ -30,7 +30,10 @@ class Omicron extends Client {
             let files = fs.readdirSync(`${dir}/${module}`);
             for(let file of files) {
                 let command = require(`${dir}/${module}/${file}`);
-                
+                if(!command.name || !command.description || !command.usage) return;
+                try {
+                    this.commands.set(command.name, command)
+                } catch(err) { this.error(err); }
             }
         }
     }
