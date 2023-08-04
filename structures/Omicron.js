@@ -2,6 +2,8 @@ const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const Logger = require("../helpers/logger.js");
 const Config = require("../config");
 const fs     = require("fs");
+
+// Omicron Client
 class Omicron extends Client {
     constructor() {
         super({
@@ -38,3 +40,6 @@ class Omicron extends Client {
         }
     }
 }
+
+// Export Omicron Client
+module.exports = Omicron;
