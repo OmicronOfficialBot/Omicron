@@ -18,6 +18,10 @@ class Logger {
     log(txt) {
         console.log(color.bgBlue(txt));
     }
+    debug(txt) {
+        console.log(color.dim(txt));
+        console.log(txt);
+    }
 }
 
 // Export Logger Class
