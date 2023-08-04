@@ -24,11 +24,14 @@ class Omicron extends Client {
         //this.loadDatabase();
     }
     loadCommands(dir) {
+        // Load Guild Commands
         let modules = fs.readdirSync(dir);
         for(let module of modules) {
-            // Load Guild Modules
-
-            
+            let files = fs.readdirSync(`${dir}/${module}`);
+            for(let file of files) {
+                let command = require(`${dir}/${module}/${file}`);
+                
+            }
         }
     }
 }
