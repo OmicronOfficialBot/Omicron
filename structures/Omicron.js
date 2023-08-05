@@ -18,7 +18,7 @@ class Omicron extends Client {
         this.logger        = new Logger(this);
         this.config        = Config;
     }
-    log(log) {
+    /*log(log) {
         this.logger.log(log);
     }
     error(log) {
@@ -32,7 +32,7 @@ class Omicron extends Client {
     }
     debug(log) {
         this.logger.debug(log);
-    }
+    }*/
     start() {
         // Login to Discord Client
         this.login(Config.Token);
