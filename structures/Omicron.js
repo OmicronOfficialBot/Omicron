@@ -45,6 +45,7 @@ class Omicron extends Client {
     loadCommands(dir) {
         // Load Global Commands
         let modules = fs.readdirSync(dir);
+        let commands = 0;
         for(let module of modules) {
             let files = fs.readdirSync(`${dir}/${module}`);
             for(let file of files) {
@@ -54,17 +55,22 @@ class Omicron extends Client {
                 try {
                     this.commands.set(command.name, command);
                 } catch(err) { this.error(err); }
+                commands++;
             }
         }
+        this.info(`[CommandLoader] Registered ${commands} commands.`);
     }
     loadEvents(dir) {
         let files = fs.readdirSync(dir);
+        let events = 0;
         for(let file of files) {
             let event = require(`${dir}/${file}`);
             return this.debug(event);
             if(!event.event) return this.error(`[EventLoader] No event name specified in ${file}!`);
             this.on(event.event, (...args) => event.run(...args));
+            events++;
         }
+        this.info(`[EventLoader] Registered ${events} events.`);
     }
 }
 
