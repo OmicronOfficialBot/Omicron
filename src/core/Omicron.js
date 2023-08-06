@@ -7,4 +7,8 @@ const config = require("../config");
 const moment = require("moment");
 
 class Omicron extends Class {
-  
+    constructor() {
+        super({
+            intents: config.intents,
+        });
+    }
