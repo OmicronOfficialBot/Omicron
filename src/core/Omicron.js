@@ -11,4 +11,7 @@ class Omicron extends Class {
         super({
             intents: config.intents,
         });
+        this.commands = new Collection();
+        this.slashCommands = new Collection();
+        this.cooldowns = new Collection();
     }
