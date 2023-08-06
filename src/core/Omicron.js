@@ -1,2 +1,5 @@
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
-const 
+const Database = require("./database");
+const Logger = require("./logger");
+const Config = require("../config");
+
