@@ -6,3 +6,5 @@ const logger = require("./logger");
 const config = require("../config");
 const moment = require("moment");
 
+class Omicron extends Class {
+  
