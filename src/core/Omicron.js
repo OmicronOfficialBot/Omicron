@@ -16,7 +16,10 @@ class Omicron extends Class {
         this.commands = new Collection();
         this.cooldowns = new Collection();
         this.aliases = new Collection();
+        
         // Create Helpers
         this.logger = new logger(this);
         this.config = config;
     }
+    
+}
