@@ -11,7 +11,6 @@ class Omicron extends Class {
         super({
             intents: config.intents,
         });
-
         // Create Collections
         this.commands = new Collection();
         this.cooldowns = new Collection();
@@ -20,6 +19,9 @@ class Omicron extends Class {
         // Create Helpers
         this.logger = new logger(this);
         this.config = config;
+    }
+    start() {
+        this.login(this.config.token);
     }
     
 }
