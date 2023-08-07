@@ -21,6 +21,7 @@ class Omicron extends Class {
         this.config = config;
     }
     start() {
+        this.client.once("ready", this.ready.bind(this));
         this.login(this.config.token);
     }
     
