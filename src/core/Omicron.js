@@ -19,9 +19,11 @@ class Omicron extends Class {
         // Create Helpers
         this.logger = new logger(this);
         this.config = config;
+
+        // Event Listeners
+        this.client.once("ready", this.ready.bind(this));
     }
     start() {
-        this.client.once("ready", this.ready.bind(this));
         this.login(this.config.token);
     }
     
