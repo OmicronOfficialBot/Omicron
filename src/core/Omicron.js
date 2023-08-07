@@ -23,6 +23,9 @@ class Omicron extends Class {
         // Event Listeners
         this.client.once("ready", this.ready.bind(this));
     }
+    ready() {
+        this.logger.info(`[Omicron] Client is ready!`);
+    }
     start() {
         this.login(this.config.token);
     }
