@@ -34,3 +34,5 @@ class Omicron extends Client {
     }
     
 }
+
+module.exports = Omicron;
