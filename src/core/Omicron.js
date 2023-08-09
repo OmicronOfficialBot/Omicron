@@ -1,4 +1,4 @@
-const { Client, Collection, GatewayIntentBits } = require("discord.js");
+const { Client, Collection, GatewayIntentBits, ActivityType } = require("discord.js");
 const fs = require("fs");
 const glob = require("glob");
 const database = require("./database");
@@ -25,6 +25,9 @@ class Omicron extends Class {
     }
     ready() {
         this.logger.info(`[Omicron] Client is ready!`);
+        this.client.user.setActivity(`${client.guilds.cache.size} Guilds!`, {
+            type: ActivityType.Watching
+        });
     }
     start() {
         this.login(this.config.token);
