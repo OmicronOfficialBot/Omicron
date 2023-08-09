@@ -25,7 +25,7 @@ class Omicron extends Client {
     }
     ready() {
         this.logger.info(`[Omicron] Client is ready!`);
-        this.user.setActivity(`${client.guilds.cache.size} Guilds!`, {
+        this.user.setActivity(`${this.guilds.cache.size} Guilds!`, {
             type: ActivityType.Watching
         });
     }
