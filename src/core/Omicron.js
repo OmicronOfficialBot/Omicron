@@ -6,7 +6,7 @@ const logger = require("./logger");
 const config = require("../config");
 const moment = require("moment");
 
-class Omicron extends Class {
+class Omicron extends Client {
     constructor() {
         super({
             intents: config.intents,
