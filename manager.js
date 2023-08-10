@@ -11,7 +11,7 @@ class Manager {
 
 module.exports = Manager;
 
-/* class AutoModextends Module {
+/* class AutoMod extends Manager {
    constructor(client) {
        super(client, {
            module: "automod",
