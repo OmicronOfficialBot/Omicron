@@ -17,6 +17,7 @@ class Omicron extends Client {
         this.aliases = new Collection();
         
         // Create Helpers
+        this.modules = new Array();
         this.logger = new logger(this);
         this.config = config;
 
