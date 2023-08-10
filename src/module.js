@@ -1,4 +1,4 @@
-class Module {
+class Manager {
     constructor(client, arg) {
         this.client = client;
         this.module = arg.module;
