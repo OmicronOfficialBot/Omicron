@@ -10,7 +10,7 @@ module.exports = {
     ],
     partials: "",
     paths: {
-        commands: `${process.cwd()}/commands`,
-        events: `${process.cwd()}/events`,
+        commands: `${process.cwd()}/src/commands`,
+        events: `${process.cwd()}/src/events`,
     }
 }
