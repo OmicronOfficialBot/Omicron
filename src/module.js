@@ -5,9 +5,11 @@ class Manager {
         this.enabled = arg.enabled || false;
         this.log = arg.log;
         if(this.log) client.logger.info(`[${this.module}Module] Successfully loaded module.`);
-        if(this.enabled) this.client.modules.push(this);
+        //if(this.enabled) this.client.modules.push(this);
     }
 }
+
+module.exports = Manager;
 
 /* class AutoModextends Module {
    constructor(client) {
