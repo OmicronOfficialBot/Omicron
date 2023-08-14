@@ -1,20 +1,21 @@
 const colors = require("ansicolor");
 
 class Logger {
-    constructor(client) {
-        this.client = client;
+    constructor(logPrefix) {
+        this.logPrefix = `[${logPrefix}] `;
+        if(!logPrefix) this.logPrefix = "";
     }
-    log(text) {
-        console.log(colors.bgCyan(text));
+    main(text) {
+        console.log(colors.cyan(`${this.logPrefix}${text}`))
     }
     info(text) {
-        console.log(colors.cyan(text));
+        console.log(colors.cyan(`${text}`));
     }
     error(text) {
-        console.log(colors.red("❌ Error! " + text));
+        console.log(colors.red(`❌ Error! ${text}`));
     }
-    warn() {
-        console.log(colors.yellow("⚠️ Warning! " + text));
+    warn(text) {
+        console.log(colors.yellow(`⚠️ Warning! ${text}`));
     }
     debug(text) {
         console.log(colors.dim(`⚙️  Debug!`));

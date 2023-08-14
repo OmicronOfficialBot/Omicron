@@ -1,8 +1,8 @@
-const Command = require("../../command");
+const Command = require("../../core/structures/command");
 
-const Ping extends Command {
-    constructor(client) {
-        super(client, {
+class Ping extends Command {
+    constructor() {
+        super({
             command: "ping",
             description: "Get Omicron's Speed",
             aliases: ["latency"],
@@ -10,10 +10,10 @@ const Ping extends Command {
             usage: "ping",
             userPermissions: [],
             botPermissions: [],
+            run: (client, message, args) => {
+              message.channel.send(`Pong! Latency is \`${client.ws.ping}\`ms!`);  
+            }
         });
-    }
-    run(client, message, args) {
-        message.channel.send(`Pong! Latency is \`${client.ws.ping}\`ms!`);
     }
 }
 

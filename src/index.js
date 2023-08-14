@@ -3,5 +3,4 @@ const Omicron = new Client();
 const fs = require("fs");
 Omicron.start();
 
-let managers = fs.readdir("./managers");
-console.log(managers)
+module.exports = Omicron;
